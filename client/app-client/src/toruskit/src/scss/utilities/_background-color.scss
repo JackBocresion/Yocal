@@ -1,0 +1,74 @@
+//
+// ------------------------------------------------------------------------
+// Background color
+// ------------------------------------------------------------------------
+//
+// BG from $color-palette
+//
+@each $color-name, $color-var in $color-palette {
+	.bg-#{$color-name} {
+		--bg-h: #{round(hue($color-var))};
+		--bg-s: #{round(saturation($color-var))};
+		--bg-l: #{round(lightness($color-var))};
+		--bg-a: 1;
+		background-color: hsla(var(--bg-h), var(--bg-s), calc(var(--bg-l) + var(--bg-lightness, 0%)), var(--bg-a, 1)) !important;
+	}
+}
+//
+// BG from $theme-colors except $primary and $secondary
+//
+@each $color-name, $color-var in ("success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark) {
+	.bg-#{$color-name} {
+		--bg-h: #{round(hue($color-var))};
+		--bg-s: #{round(saturation($color-var))};
+		--bg-l: #{round(lightness($color-var))};
+		--bg-a: 1;
+		background-color: hsla(var(--bg-h), var(--bg-s), calc(var(--bg-l) + var(--bg-lightness, 0%)), var(--bg-a, 1)) !important;
+	}
+}
+//
+// Darken color
+//
+@for $i from 1 through 5 {
+	.bg-darken-#{$i} {
+		--bg-lightness: -#{$i*5}#{"%"} !important;
+	}
+}
+//
+// Lighten color
+//
+@for $i from 1 through 5 {
+	.bg-lighten-#{$i} {
+		--bg-lightness: #{$i*5}#{"%"} !important;
+	}
+}
+//
+// HUE parameter
+//
+[class*="bg-h-"] {
+	background-color: hsla(var(--bg-h), var(--bg-s, 100%), var(--bg-l, 50%), var(--bg-a, 1)) !important;
+}
+@for $i from 0 through 23 {
+	.bg-h-#{$i*15} {
+		--bg-h: #{$i*15}#{"deg"};
+	}
+}
+//
+// SATURATION & LIGHTNESS parameter
+//
+@for $i from 0 through 20 {
+	.bg-s-#{$i*5} {
+		--bg-s: #{$i*5}#{"%"};
+	}
+	.bg-l-#{$i*5} {
+		--bg-l: #{$i*5}#{"%"};
+	}
+}
+//
+// ALPHA parameter
+//
+@each $variant in $alpha-values {
+  .bg-a-#{$variant} {
+		--bg-a: #{$variant*(0.01)};
+	}
+}

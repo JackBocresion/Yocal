@@ -1,0 +1,300 @@
+// Colors
+
+$primary:           #005aff;
+$secondary:         #737880;
+$success:           #21bc53;
+$danger:            #e43f51;
+$warning:           #ffae36;
+$info:              #46aec9;
+$grey:              #808080;
+$light:             #f9f9f9;
+$dark:              #202020;
+$black:             #000;
+$white:             #fff;
+
+// Theme colors
+
+$theme-colors: (
+  "primary":            $primary,
+  "secondary":          $secondary,
+  "success":            $success,
+  "info":               $info,
+  "warning":            $warning,
+  "danger":             $danger,
+  "light":              $light,
+  "dark":               $dark,
+  "grey":               $grey,
+);
+
+// Additional color palette
+
+$red:               hsl(3, 100%, 61%);    //#ff4136
+$orange:           	hsl(28, 100%, 55%);   //#ff851b
+$yellow:            hsl(52, 100%, 50%);   //#ffdc00
+$lime:              hsl(146, 100%, 50%);  //#01ff70
+$green:             hsl(127, 63%, 49%);   //#2ecc40
+$olive:             hsl(153, 43%, 42%);   //#3d9970
+$teal:              hsl(180, 100%, 32%);  //#00a3a3
+$aqua:              hsl(197, 100%, 75%);  //#7fdbff
+$blue:              hsl(208, 100%, 43%);  //#0074d9
+$navy:              hsl(210, 100%, 12%);  //#001f3f
+$indigo:            hsl(263, 90%, 51%);   //#6610f2
+$maroon:            hsl(331, 74%, 30%);   //#85144b
+$purple:            hsl(292, 88%, 42%);   //#b10dc9
+$magenta:           hsl(314, 88%, 51%);   //#f012be
+$brown:             hsl(28, 28%, 39%);    //#806248
+
+$body-color:                      rgba($black, .7);
+$body-color-light:                rgba($white, .8);
+
+$component-active-bg:             $primary;
+
+$link-color:                      $primary;
+$link-hover-color:                darken($link-color, 15%);
+
+// Color palette for backgrounds
+
+$color-palette: () !default;
+$color-palette: map-merge(
+  (
+    "primary":            $primary,
+    "secondary":          $secondary,
+    "black":              $black,
+    "white":              $white,
+    "grey":               $grey,
+    "red":                $red,
+    "orange":             $orange,
+    "yellow":             $yellow,
+    "lime":               $lime,
+    "green":              $green,
+    "olive":              $olive,
+    "teal":               $teal,
+    "aqua":               $aqua,
+    "blue":               $blue,
+    "navy":               $navy,
+    "indigo":             $indigo,
+    "maroon":             $maroon,
+    "purple":             $purple,
+    "magenta":            $magenta,
+    "brown":              $brown
+  ),
+  $color-palette
+);
+
+// Alpha color values
+//
+// Colors
+//
+$alpha-colors: () !default;
+$alpha-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "white":      $white,
+    "black":      $black
+  ),
+  $alpha-colors
+);
+
+// Alpha Values
+
+$alpha-values: (
+  0,
+  5,
+  10,
+  20,
+  30,
+  40,
+  50,
+  60,
+  70,
+  80,
+  90,
+  100
+) !default;
+
+// Transitions
+
+$tr-duration-default:             250ms;
+$tr-duration-quad:                400ms;
+$tr-duration-exponential:         600ms;
+$tr-duration-bounce:              500ms;
+
+$tr-timing-default:               cubic-bezier(.28,.05,.36,1);
+$tr-timing-quad:                  cubic-bezier(.25,.4,0,1);
+$tr-timing-exponential:           cubic-bezier(.9,0,.1,1);
+$tr-timing-bounce:                cubic-bezier(.4,0,0,1.4);
+$tr-timing-linear:                linear;
+
+$tr:                              $tr-duration-default      $tr-timing-default;
+$tr-exponential:                  $tr-duration-exponential  $tr-timing-exponential;
+$tr-quad:                         $tr-duration-quad         $tr-timing-quad;
+$tr-bounce:                       $tr-duration-bounce       $tr-timing-bounce;
+$tr-linear:                       $tr-duration-default      $tr-timing-linear;
+
+$duration-multiplier: (
+  fastest:             .45,
+  faster:              .6,
+  fast:                .85,
+  // default:           1,
+  slow:                 1.5,
+  slower:               2,
+  slowest:              2.5
+);
+
+// Border radius
+
+$br-sm:                           .125rem;
+$br-md:                           .25rem;
+$br-lg:                           .5rem;
+$br-xl:                           .75rem;
+$br-pill:                         50rem;
+$br-circle:                       50%;
+
+// Shadows
+
+$box-shadow-sm:                     0 .125rem .25rem rgba($black, .1);
+$box-shadow:                        0 .125rem .75rem rgba($black, .08);
+$box-shadow-md:                     $box-shadow;
+$box-shadow-lg:                     0 .175rem 1.5rem rgba($black, .16);
+$box-shadow-xl:                     0 .25rem 2.5rem rgba($black, 0.25);
+$box-shadow-pop:                    0 .25rem 4rem rgba($black, 0.35);
+$box-shadow-risen:                  0 1.5rem 1rem -1rem rgba($black, 0.2);
+
+// Spacers
+
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 2),
+  6: ($spacer * 3),
+  7: ($spacer * 5),
+  8: ($spacer * 10),
+  9: ($spacer * 15),
+  10: ($spacer * 20)
+);
+
+// Directions
+
+$directions:                        top, right, bottom, left;
+
+// Z-index
+
+$z-index-master:                       1090;
+
+//
+// ------------------------------------------------------------------------
+// Components
+// ------------------------------------------------------------------------
+//
+
+// Badges
+
+$badge-border-radius:               .2em;
+$badge-font-weight:                 500;
+$badge-font-size:                   75%;
+$badge-padding-y:                   .325rem;
+$badge-padding-x:                   .475rem;
+$badge-transition:                  $tr;
+$badge-pill-padding-x:              .75rem;
+
+// Breadcrumb
+
+$breadcrumb-divider-opacity:        .4 !default;
+$breadcrumb-item-opacity:           .7 !default;
+$breadcrumb-item-hover-opacity:     .9 !default;
+$breadcrumb-active-opacity:         .4 !default;
+$breadcrumb-active-hover-opacity:   .6 !default;
+
+// Button group
+
+$btn-group-border-radius:           $br-md;
+
+// Cards
+
+$card-shadow:                       $box-shadow-sm !default;
+$card-margin-bottom:                1rem !default;
+$card-cap-bg:                       rgba($black, 0.02);
+$card-cap-color:                    inherit;
+
+// Forms
+
+$input-border-color:                    rgba(0, 0, 0, .2);
+$input-hover-border-color:              rgba(0, 0, 0, .3);
+$input-focus-border-color:              rgba(0, 0, 0, .4);
+$input-box-shadow:                      inset 0 1px 3px rgba($black, 0);
+
+$input-focus-box-shadow:                $box-shadow-lg;
+$input-transition:                      $tr;
+
+$custom-control-indicator-size:                         1.25rem;
+$custom-control-indicator-bg:                           $white;
+$custom-control-indicator-border-color:                 rgba($black, .25);
+$custom-control-indicator-box-shadow:                   0 0.125rem 0.125rem rgba(0, 0, 0, .08);
+
+$custom-control-label-disabled-color:                   $gray-500;
+
+$custom-control-indicator-checked-bg:                   $primary;
+$custom-control-indicator-checked-border-color:         $primary;
+$custom-control-indicator-checked-box-shadow:           0 .125rem .125rem rgba($black, .1);
+$custom-control-indicator-active-bg:                    $gray-200;
+
+$custom-checkbox-indicator-border-radius:               $br-sm;
+
+$custom-select-bg-size:                                 16px 16px;
+$custom-select-indicator-color:                         rgba($black, .8);
+$custom-select-indicator:                               str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$custom-select-indicator-color}' width='16' height='16'%3E%3Cpath d='M8.5 14.25a.744.744 0 0 1-.53-.22l-3-3a.75.75 0 1 1 1.061-1.061l2.47 2.47 2.47-2.47a.75.75 0 1 1 1.061 1.061l-3 3a.752.752 0 0 1-.532.22zM11.5 7.25a.744.744 0 0 1-.53-.22L8.5 4.561 6.03 7.03a.75.75 0 1 1-1.061-1.061l3-3a.751.751 0 0 1 1.061 0l3 3a.75.75 0 0 1-.53 1.281z'/%3E%3C/svg%3E"), "#", "%23");
+$custom-select-background:                              $custom-select-indicator no-repeat right $custom-select-padding-x center / $custom-select-bg-size;
+
+$custom-select-dark-indicator-color:                    rgba($white, .8);
+$custom-select-dark-indicator:                          str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$custom-select-dark-indicator-color}' width='16' height='16'%3E%3Cpath d='M8.5 14.25a.744.744 0 0 1-.53-.22l-3-3a.75.75 0 1 1 1.061-1.061l2.47 2.47 2.47-2.47a.75.75 0 1 1 1.061 1.061l-3 3a.752.752 0 0 1-.532.22zM11.5 7.25a.744.744 0 0 1-.53-.22L8.5 4.561 6.03 7.03a.75.75 0 1 1-1.061-1.061l3-3a.751.751 0 0 1 1.061 0l3 3a.75.75 0 0 1-.53 1.281z'/%3E%3C/svg%3E"), "#", "%23");
+$custom-select-dark-background:                         $custom-select-dark-indicator no-repeat right $custom-select-padding-x center / $custom-select-bg-size;
+
+// Input group
+
+$input-group-addon-bg:                  $white;
+$input-group-addon-border-color:        rgba($black, .2);
+
+// Progress
+
+$progress-sizes: () !default;
+$progress-sizes: map-merge(
+  (
+  "xs": 1px,
+  "sm": 4px,
+  "md": 8px,
+  "lg": 32px
+  ),
+  $progress-sizes
+);
+
+$progress-box-shadow:                   none;
+$progress-bar-bg:                       $primary;
+$progress-border-radius:                $br-sm;
+$progress-tooltip-bg:                   #1d2124;
+
+//
+// ------------------------------------------------------------------------
+// Utilities
+// ------------------------------------------------------------------------
+//
+
+// Border thickness
+
+$border-thickness: () !default;
+$border-thickness: map-merge(
+  (
+    md:   2px,
+    lg:   3px,
+    xl:   4px
+  ),
+  $border-thickness
+);
+
+// Text
+
+$text-muted:                        rgba($black, .5);
+$text-muted-light:                  rgba($white, .5);

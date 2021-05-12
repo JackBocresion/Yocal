@@ -1,0 +1,47 @@
+//
+// ------------------------------------------------------------------------
+// Text colors
+// ------------------------------------------------------------------------
+//
+// Black & white
+//
+.text-black {
+  color: $black !important;
+}
+// Darken primary & secondary color text
+//
+@each $color-name, $color in ("primary": $primary, "secondary": $secondary) {
+  .text-#{$color-name}-d {
+    color: shade($color, 30%) !important;
+  }
+}
+//
+// Lighten primary & secondary color text
+//
+@each $color-name, $color in ("primary": $primary, "secondary": $secondary) {
+  .text-#{$color-name}-l {
+    color: tint($color, 30%) !important;
+  }
+}
+//
+// Theme colors Alpha values
+//
+@each $color-name, $color in $alpha-colors {
+  @each $alpha in $alpha-values {
+    .text-#{$color-name}-#{$alpha} {
+        color: rgba( $color, ($alpha * .01) ) !important;
+    }
+  }
+}
+//
+// Light muted text on dark background
+//
+.text-muted-light {
+  color: $text-muted-light !important;
+}
+//
+// Light body text on dark background
+//
+.text-body-light {
+  color: $body-color-light !important;
+}

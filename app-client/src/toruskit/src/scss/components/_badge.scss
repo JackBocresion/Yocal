@@ -1,0 +1,41 @@
+.badge {
+  box-shadow: $box-shadow-sm;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+@each $color, $value in $theme-colors {
+  .badge-#{$color}-light {
+    box-shadow: none;
+    border-color: tint($value, 85%);
+    background-color: tint($value, 85%);
+    color: $value;
+
+    @at-root a#{&} {
+      @include hover-focus {
+        border-color: tint($value, 75%);
+        background-color: tint($value, 75%);
+        color: shade($value, 25%);
+      }
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .badge-#{$color}-outline {
+    box-shadow: none;
+    border-width: 1px;
+    border-style: solid;
+    background-color: transparent;
+    border-color: $value;
+    color: $value;
+
+    @at-root a#{&} {
+      @include hover-focus {
+        background-color: $value;
+        color: $white;
+      }
+    }
+  }
+}

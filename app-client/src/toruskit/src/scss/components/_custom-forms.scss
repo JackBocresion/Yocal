@@ -1,0 +1,456 @@
+//
+// ------------------------------------------------------------------------
+// 1. Custom Radio & Checkbox
+// 2. Custom Checkbox
+// 3. Custom Radio
+// 4. Custom Switch
+// 5. Custom Number Input
+// 6. Custom Select
+// 7. Custom input range
+// 8. Form dark
+// ------------------------------------------------------------------------
+//
+//
+// ------------------------------------------------------------------------
+// 1. Custom Radio & Checkbox
+// ------------------------------------------------------------------------
+//
+.custom-checkbox,
+.custom-radio {
+
+  padding-left: 1.25rem;
+  left: .5rem;
+
+  .custom-control-label {
+    // Indicator
+    &:after {
+      color: $white;
+      content: "";
+      font-family: "torus-kit";
+      position: absolute;
+      opacity: 0;
+      transform: translateY(-.375rem) rotate(.01deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none;
+      z-index: 1;
+      transition-duration: 350ms;
+      transition-timing-function: $tr-timing-bounce;
+      // transition: $tr-bounce;
+    }
+    // Background
+    &:before {
+      cursor: pointer;
+      pointer-events: auto;
+      transition: $tr;
+    }
+    &:hover {
+      // Background
+      &:before {
+        border: 1px solid rgba($black, .4);
+        box-shadow: 0 .125rem .375rem rgba($black, .1) ;
+        }
+      }
+    }
+
+  .custom-control-input {
+    &:active, &:active:focus, &:focus {
+      ~ .custom-control-label {
+        // Background
+        &:before {
+          border-color: rgba($black, .5);
+          box-shadow: 0 .125rem .25rem rgba($black, .2);
+        }
+      }
+    }
+    &:disabled {
+      ~ .custom-control-label {
+        // Background
+        &:before {
+          cursor: auto;
+          background-color: #efefef;
+          box-shadow: none;
+          opacity: .7;
+        }
+      }
+    }
+    &:checked {
+      ~ .custom-control-label {
+        // Background
+        &:before {
+          background-color: $primary;
+          border: 1px solid $primary;
+          background-image: none;
+          box-shadow: 0 0.125rem 0.125rem rgba($black, .1);
+        }
+        // Indicator
+        &:after {
+          background-image: none;
+          background-color: transparent;
+          border: 0;
+          box-shadow: none;
+          opacity: 1;
+          transform: translateY(0) rotate(0.01deg);
+        }
+      }
+    }
+  }
+}
+
+//
+// ------------------------------------------------------------------------
+// 2. Custom Checkbox
+// ------------------------------------------------------------------------
+//
+.custom-checkbox {
+  .custom-control-label {
+    &:before {
+      border-radius: $br-sm;
+    }
+    &:after {
+      content: "\e90a";
+      left: -24px;
+      text-shadow: 0px 1px 2px rgba($black, .2);
+    }
+  }
+  .custom-control-input {
+    &:indeterminate {
+      ~ .custom-control-label {
+        &:before {
+          background-color: $primary;
+          border-color: $primary;
+          color: $white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 1;
+          font-family: "torus-kit";
+          content: "\e909";
+        }
+      }
+    }
+  }
+}
+
+//
+// ------------------------------------------------------------------------
+// 3. Custom Radio
+// ------------------------------------------------------------------------
+//
+.custom-radio {
+  .custom-control-label {
+    &:before {
+      border-radius: $br-circle;
+    }
+    &:after {
+      content: "\e90d";
+      left: -28px;
+    }
+  }
+}
+
+//
+// ------------------------------------------------------------------------
+// 4. Custom Switch
+// ------------------------------------------------------------------------
+//
+.custom-switch {
+  padding-left: 40px;
+
+  .custom-control-label {
+    padding-left: 12px;
+
+    // Pill background
+    &:before {
+      border: 1px solid rgba($black, .25);
+      box-shadow: 0 .125rem .125rem rgba($black, .08);
+      border-radius: $br-pill;
+      height: 1.5rem;
+      left: -40px;
+      top: 0;
+      width: 2.5rem;
+    }
+    // Circle
+    &:after {
+      background-image: none;
+      background-color: $white;
+      border-radius: $br-circle;
+      border: 1px solid rgba($black, .3);
+      box-shadow: 0 .125rem .25rem rgba($black, .2);
+      left: -36px;
+      height: 1.125rem;
+      opacity: 1;
+      top: 3px;
+      width: 1.125rem;
+      transform: translateX(0) rotate(.01deg);
+      transition: $tr-quad;
+    }
+  }
+
+  .custom-control-input {
+    &:not(:disabled):hover {
+      ~ .custom-control-label {
+        // Pill background
+        &:before {
+          border-color: rgba($black, .4);
+          box-shadow: 0 .125rem .375rem rgba($black, .1) ;
+          cursor: pointer;
+        }
+        // Circle
+        &:after {
+          cursor: pointer;
+        }
+      }
+    }
+    &:checked,
+    &:checked:focus {
+      ~ .custom-control-label {
+        // Pill background
+        &:before {
+          background-color: $primary;
+          border-color: $primary;
+        }
+        // Circle
+        &:after {
+          border-color: transparent;
+          background-color: $white;
+          top: 3px;
+          transform: translateX(.875rem) rotate(.01deg);
+        }
+      }
+    }
+    &:focus {
+      ~ .custom-control-label {
+        // Pill background
+        &:before {
+          // background-color: $primary;
+          border-color: rgba($black, .4);
+        }
+      }
+    }
+    &:disabled {
+      // Pill background
+      ~ .custom-control-label {
+        &:before {
+          box-shadow: none;
+          opacity: .6;
+        }
+        // Circle
+        &:after {
+          background-color: transparent;
+          box-shadow: none;
+          opacity: .6;
+        }
+      }
+    }
+  }
+}
+
+.custom-switch-end {
+  padding-left: 0;
+
+  .custom-control-label {
+    width: 100%;
+
+    &:after {
+      left: inherit;
+      right: 0;
+    }
+
+    &:before {
+      left: inherit;
+      right: 1.125rem;
+    }
+  }
+}
+
+//
+// ------------------------------------------------------------------------
+// 5. Custom Number Input
+// ------------------------------------------------------------------------
+//
+.custom-number[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.custom-number[type=number]::-webkit-inner-spin-button,
+.custom-number[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+//
+// ------------------------------------------------------------------------
+// 6. Custom select
+// ------------------------------------------------------------------------
+//
+.custom-select,
+select {
+  box-shadow: 0 .125rem .25rem rgba($black, .08);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: $box-shadow-md;
+  }
+
+  &:focus {
+    border-color: rgba($black, .3);
+  }
+
+  option {
+    color: $black;
+  }
+}
+
+.custom-select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+//
+// ------------------------------------------------------------------------
+// 7. Custom input range
+// ------------------------------------------------------------------------
+//
+// Track
+
+.custom-range::-webkit-slider-runnable-track {
+  height: .25rem;
+  box-shadow: none;
+}
+.custom-range::-moz-range-track {
+  height: 4px;
+}
+.custom-range::-ms-track {
+  height: 4px;
+}
+
+// Thumb
+
+.custom-range::-webkit-slider-thumb {
+  background-color: $primary;
+  box-shadow: $box-shadow-sm;
+  margin-top: -.4rem;
+  -webkit-appearance: none;
+}
+.custom-range::-moz-range-thumb {
+  background-color: $primary;
+  box-shadow: $box-shadow-sm;
+}
+.custom-range::-ms-thumb {
+  background-color: $primary;
+  box-shadow: $box-shadow-sm;
+}
+
+// Progress
+
+.custom-range-progress {
+  --range: 0%;
+  -webkit-appearance: none;
+}
+.custom-range-progress::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, $primary var(--range), #dee2e6 0%), #dee2e6;
+}
+.custom-range-progress::-ms-fill-lower {
+  display: inline-block;
+  background-color: $primary;
+}
+.custom-range-progress::-moz-range-progress {
+  background-color: $primary;
+  border-radius: 50rem;
+  height: .25rem;
+}
+
+.tk-range-bubble {
+  span {
+    display: inline-block;
+    position: relative;
+    left: 0;
+  }
+}
+
+.tk-range-values {
+  span:last-child {
+    float: right;
+  }
+}
+
+//
+// ------------------------------------------------------------------------
+// 8. Form dark
+// ------------------------------------------------------------------------
+//
+.form-dark {
+  &.input-transparent {
+
+    .custom-select {
+      background: $custom-select-dark-background;
+      border-color: rgba($white, .5);
+      background-color: transparent;
+      color: $white;
+    }
+
+    .custom-control {
+      &.custom-checkbox,
+      &.custom-radio {
+        .custom-control-label {
+          // Background
+          &:before {
+            border-color: rgba($white, .5);
+            box-shadow: 0 .125rem .125rem rgba($black, .05);
+            background-color: transparent;
+          }
+        }
+        .custom-control-input {
+          &:checked {
+            ~ .custom-control-label {
+              // Background
+              &:before {
+                background-color: $primary;
+                border: 1px solid $primary;
+                background-image: none;
+                box-shadow: 0 .125rem .125rem rgba($black, .1);
+              }
+              // Indicator
+              &:after {
+                background-color: transparent;
+                border: 0;
+                box-shadow: none;
+                opacity: 1;
+                transform: translateY(0) rotate(.01deg);
+              }
+            }
+          }
+        }
+      }
+      &.custom-switch {
+        .custom-control-label {
+          // Background
+          &:before {
+            border-color: rgba($white, .5);
+            box-shadow: 0 .125rem .125rem rgba($black, .05);
+            background-color: transparent;
+          }
+          &:after {
+            border-color: $white;
+          }
+        }
+        .custom-control-input {
+          &:checked {
+            ~ .custom-control-label {
+              // Background
+              &:before {
+                background-color: $primary;
+                border: 1px solid $primary;
+                background-image: none;
+                box-shadow: 0 .125rem .125rem rgba($black, .1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

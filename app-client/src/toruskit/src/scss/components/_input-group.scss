@@ -1,0 +1,68 @@
+.input-group-text {
+  background-clip: padding-box;
+  transition: $tr;
+}
+
+// Style tune
+
+.input-group-prepend {
+  ~ .form-control:first-of-type {
+    border-left-color: rgba($black, .1);
+  }
+}
+
+.input-group-append {
+  .input-group-text {
+    border-left-color: rgba($black, .05);
+  }
+}
+
+// Flat addon (no borders and white background)
+
+.input-addon-flat {
+  .input-group-append {
+    margin-left: 0;
+
+    .input-group-text {
+      border-left: 0;
+    }
+  }
+
+  .input-group-prepend {
+    margin-right: 0;
+
+    .input-group-text {
+      border-right: 0;
+      &:not(:first-of-type) {
+        border-left: 0;
+      }
+    }
+
+    ~ .form-control:first-of-type {
+      margin-left: 0;
+    }
+
+  }
+
+  .input-group-text {
+    background-color: $white;
+  }
+}
+
+.input-addon-flat,
+.input-addon-flat .input-group {
+  > .form-control:first-child {
+    border-right: 0;
+    padding-right: .5rem;
+  }
+  > .form-control:last-child {
+    border-left: 0;
+    padding-left: .5rem;
+  }
+  > .form-control:not(:first-child):not(:last-child) {
+    border-left: 0;
+    border-right: 0;
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+}

@@ -1,0 +1,94 @@
+//
+// ------------------------------------------------------------------------
+// Transition types
+// ------------------------------------------------------------------------
+//
+.tr-quad {
+  // transition-duration: $tr-duration-quad !important;
+  // transition-timing-function: $tr-timing-quad !important;
+  --tr-duration: #{$tr-duration-quad};
+  --tr-timing: #{$tr-timing-quad};
+  transition: var(--tr-duration) var(--tr-timing) !important;
+}
+.tr-exponential {
+  transition: $tr-exponential !important;
+}
+.tr-bounce {
+  transition: $tr-bounce !important;
+}
+.tr-linear {
+  transition: $tr-linear !important;
+}
+.tr {
+  transition: $tr !important;
+}
+.tr-none {
+  transition: none !important;
+}
+
+//
+// ------------------------------------------------------------------------
+// Transition speed
+// ------------------------------------------------------------------------
+//
+@each $duration, $duration-value in $duration-multiplier {
+  .tr-#{$duration} {
+    // --tr-duration: #{$duration-value} !important;
+    // transition-duration: #{$duration-value} !important;
+    transition-duration: calc( var(--tr-duration) * #{$duration-value} ) !important;
+  }
+}
+
+// [data-fx~="fastest"] {
+//   --tr-duration: #{$tr-duration-fastest} !important;
+// }
+// .tr-fastest {
+//   --tr-duration: #{$tr-duration-fastest} !important;
+//   transition-duration: $tr-duration-fastest !important;
+// }
+
+// [data-fx~="faster"] {
+//   --tr-duration: #{$tr-duration-faster} !important;
+// }
+// .tr-faster {
+//   --tr-duration: #{$tr-duration-faster} !important;
+//   transition-duration: $tr-duration-faster !important;
+// }
+
+// [data-fx~="fast"] {
+//   --tr-duration: #{$tr-duration-fast} !important;
+// }
+// .tr-fast {
+//   --tr-duration: #{$tr-duration-fast} !important;
+//   transition-duration: $tr-duration-fast !important;
+// }
+
+// [data-fx~="slow"] {
+//   --tr-duration: #{$tr-duration-slow} !important;
+// }
+// .tr-slow {
+//   --tr-duration: #{$tr-duration-slow} !important;
+//   transition-duration: $tr-duration-slow !important;
+// }
+
+// [data-fx~="slower"] {
+//   --tr-duration: #{$tr-duration-slower} !important;
+// }
+// .tr-slower {
+//   --tr-duration: #{$tr-duration-slower} !important;
+//   transition-duration: $tr-duration-slower !important;
+// }
+
+// [data-fx~="slowest"] {
+//   --tr-duration: #{$tr-duration-slowest} !important;
+// }
+// .tr-slowest {
+//   --tr-duration: #{$tr-duration-slowest} !important;
+//   transition-duration: $tr-duration-slowest !important;
+// }
+
+// JavsScript helper
+//
+.notrans {
+  transition: none !important;
+}

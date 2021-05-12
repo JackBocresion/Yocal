@@ -1,0 +1,61 @@
+//
+// Default button style
+//
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &.rounded-pill {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+button {
+  cursor: pointer;
+  outline: none !important;
+  transition: $tr;
+}
+
+.btn-grey,
+.btn-warning {
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+}
+//
+// Label buttons (checkbox and radio)
+//
+[data-toggle="buttons"] {
+  label.btn {
+    cursor: pointer;
+
+    &.border:hover {
+      border-color: rgba(0, 0, 0, 0.4) !important;
+    }
+  }
+}
+//
+// Button with icon
+//
+.btn-icon {
+    margin-left: .5rem;
+    margin-right: 0;
+
+    &:first-child {
+        margin-right: .5rem;
+        margin-left: 0;
+    }
+}
+
+// Disabled buttons
+
+button.disabled,
+button:disabled,
+.btn.disabled,
+.btn:disabled {
+  box-shadow: none;
+  pointer-events: none;
+}

@@ -1,0 +1,19 @@
+@import 'calendar';
+.navbar {
+   background-color: rgba(230, 230, 230, 0.4) !important;
+   border-radius: $calendar-radius;
+   //margin: 10px;
+   transition: margin 0.4s ease;
+   //animation: toggle;
+   position:sticky;
+   position: -webkit-sticky;
+   position: -moz-sticky;
+   top: 10px
+}
+.event-counters {
+   margin-left: 10px;
+   cursor: auto !important;
+ }
+ .event-counters > h4 {
+   margin:0 100px;
+ }

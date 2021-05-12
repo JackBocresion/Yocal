@@ -1,0 +1,24 @@
+// Same height of .col in .row class
+
+.cols-flex {
+	> [class*="col"]{
+		display: flex;
+		}
+	.card {
+		flex: 1 0 0%;
+	}
+}
+
+// With and Height 100%
+//
+.w-h-100 {
+	height: 100%;
+	width: 100%;
+}
+
+// 100% of screen width and height
+//
+.fullscreen {
+  height: 100vh;
+  width: 100vw;
+}

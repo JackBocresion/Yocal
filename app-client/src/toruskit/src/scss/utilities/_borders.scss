@@ -1,0 +1,38 @@
+//
+// Border radius sizes
+//
+.rounded-sm {
+	border-radius: $br-sm !important;
+}
+
+.rounded {
+	border-radius: $br-md !important;
+}
+
+.rounded-lg {
+	border-radius: $br-lg !important;
+}
+
+.rounded-xl {
+	border-radius: $br-xl !important;
+}
+//
+// Border thickness
+//
+@each $infix, $value in $border-thickness {
+	.border-#{$infix} {
+    border-width: $value !important;
+	}
+}
+//
+// Border dashed
+//
+.border-dashed {
+	border-style: dashed !important;
+}
+
+@each $direction in $directions {
+	.border-#{$direction}-dashed {
+		border-#{$direction}-style: dashed !important;
+	}
+}

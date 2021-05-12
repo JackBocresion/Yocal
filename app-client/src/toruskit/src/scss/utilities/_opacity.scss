@@ -1,0 +1,13 @@
+@each $alpha in $alpha-values {
+	.o-#{$alpha} {
+		opacity: ($alpha * .01) !important;
+	}
+}
+
+.o-0 {
+	opacity: 0 !important;
+}
+
+.o-100 {
+	opacity: 1 !important;
+}

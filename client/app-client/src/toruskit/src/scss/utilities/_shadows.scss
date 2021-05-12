@@ -1,0 +1,17 @@
+@if $enable-shadows {
+	.shadow {
+		box-shadow: $box-shadow-md !important;
+	}
+
+	.shadow-xl {
+		box-shadow: $box-shadow-xl !important;
+	}
+
+	.shadow-pop {
+		box-shadow: $box-shadow-pop !important;
+	}
+
+	.shadow-risen {
+		box-shadow: $box-shadow-risen !important;
+	}
+}

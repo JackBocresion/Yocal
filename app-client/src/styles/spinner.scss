@@ -1,0 +1,38 @@
+.bouncer {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 30%;
+}
+.bouncer div {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   align-self: center;
+   animation: bouncer 0.2s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite alternate;
+//    background:#00203FFF;
+background:#ffffff
+}
+.bouncer div:nth-child(2) {
+   animation-delay: 0.1s;
+   background:#dcdcdc
+//    background:#ADEFD1FF;
+}
+.bouncer div:nth-child(3) {
+   animation-delay: 0.2s;
+   background:#c3c3c3
+}
+.bouncer div:nth-child(4) {
+    animation-delay: 0.3s;
+    // background:#ADEFD1FF;
+    background:#a0a0a0
+}
+
+@keyframes bouncer {
+   from {
+      transform: translateY(0);
+   }
+   to {
+      transform: translateY(-70px);
+   }
+}

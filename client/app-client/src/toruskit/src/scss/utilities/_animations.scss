@@ -1,0 +1,112 @@
+//
+// ------------------------------------------------------------------------
+// Preloaders
+// ------------------------------------------------------------------------
+//
+
+// Bar preloader
+//
+@keyframes a-progress-preloader-bar {
+  0% {
+    width: 0%;
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    width: 100%;
+    transform: scaleX(0);
+  }
+}
+
+// Fade preloader
+//
+@keyframes a-progress-preloader-fade {
+  0% {
+    opacity: 1;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(1);
+  }
+}
+
+//
+// ------------------------------------------------------------------------
+// Spinners
+// ------------------------------------------------------------------------
+//
+
+// Spinner stroke
+//
+@keyframes a_spinner-stroke {
+	0% {
+		stroke-dashoffset: 100;
+	}
+	50% {
+		stroke-dashoffset: 0;
+	}
+	100% {
+		stroke-dashoffset: -100;
+	}
+}
+
+// Spinner rotation
+//
+@keyframes a_spinner-rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+//
+// ------------------------------------------------------------------------
+// Collapse icons
+// ------------------------------------------------------------------------
+//
+// Expanded state
+//
+@keyframes a_collapse-icon-is-expanded {
+  0% {
+    transform: scale(1.01);
+    content: var(--icon-a);
+  }
+  49% {
+    transform: scale(0);
+    content: var(--icon-a);
+  }
+  50% {
+    transform: scale(0);
+    content: var(--icon-b);
+  }
+  100% {
+    transform: scale(1.01);
+    content: var(--icon-b);
+  }
+}
+
+// Collapsed state
+//
+@keyframes a_collapse-icon-is-collapsed {
+  0% {
+    transform: scale(1.01);
+    content: var(--icon-b);
+  }
+  49% {
+    transform: scale(0);
+    content: var(--icon-b);
+  }
+  50% {
+    transform: scale(0);
+    content: var(--icon-a);
+  }
+  100% {
+    transform: scale(1.01);
+    content: var(--icon-a);
+  }
+}

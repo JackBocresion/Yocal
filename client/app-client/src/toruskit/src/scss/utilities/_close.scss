@@ -1,0 +1,9 @@
+.close {
+	color: inherit;
+	text-shadow: none;
+
+	&:hover {
+		color: inherit;
+		opacity: .8;
+	}
+}

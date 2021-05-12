@@ -1,0 +1,80 @@
+// Form control
+
+.form-control {
+  background-clip: padding-box;
+
+  &:hover {
+    border-color: $input-hover-border-color;
+  }
+}
+
+// Transparent inputs
+
+.input-transparent {
+  .form-control,
+  .input-group-text {
+    background-color: transparent !important;
+  }
+}
+
+// Form dark
+
+.form-dark {
+  color: $white;
+
+  &.input-transparent {
+
+    .form-control,
+    .input-group-text {
+      border-color: rgba($white, .6);
+      background-color: transparent;
+      color: $white;
+    }
+
+    .form-control {
+      &:focus, &:focus:hover {
+        border-color: rgba($white, .8);
+        color: $white;
+      }
+      &:hover {
+        border-color: rgba($white, .7);
+      }
+    }
+
+    .input-group {
+      &:focus-within,
+      &:hover:focus-within {
+        .input-group-text,
+        input  {
+          border-color: rgba($white, .8);
+        }
+      }
+      &:hover {
+        .input-group-text,
+        .form-control {
+          border-color: rgba($white, .7);
+        }
+      }
+    }
+
+    input {
+      &::placeholder {
+        color: rgba($white, .4) !important;
+      }
+      &:-ms-input-placeholder {
+        color: rgba($white, .4) !important;
+      }
+    }
+  }
+}
+
+// Placeholder color
+
+input {
+  &::placeholder {
+    color: rgba($black,.4) !important;
+  }
+  &:-ms-input-placeholder {
+    color: rgba($black,.4) !important;
+  }
+}

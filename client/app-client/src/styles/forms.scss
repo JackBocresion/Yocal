@@ -1,0 +1,4 @@
+@import "./variables.scss";
+input, textarea{
+    border-radius:$input-radius !important;
+}

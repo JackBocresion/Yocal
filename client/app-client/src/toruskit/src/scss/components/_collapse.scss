@@ -1,0 +1,39 @@
+.collapse-icon[data-toggle="collapse"] {
+  &:hover {
+    &:after {
+      animation-duration: 200ms;
+    }
+  }
+  &:after {
+    --icon-a: "\e905";
+    --icon-b: "\e904";
+    animation-duration: 0ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: $tr-timing-quad;
+    content: "\e905";
+    float: right;
+    margin-left: .5rem;
+    transform-style: preserve-3d;
+    font-family: "torus-kit";
+    font-style: normal;
+    position: relative;
+  }
+  &.collapse-plus {
+    &:after {
+      --icon-a: "\e908";
+      --icon-b: "\e909";
+    }
+  }
+}
+
+.collapse-icon[aria-expanded="false"] {
+  &:after {
+    animation-name: a_collapse-icon-is-collapsed;
+  }
+}
+
+.collapse-icon[aria-expanded="true"] {
+  &:after {
+    animation-name: a_collapse-icon-is-expanded;
+  }
+}
