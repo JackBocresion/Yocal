@@ -1,0 +1,30 @@
+.btn-group {
+  border-radius: $btn-group-border-radius;
+
+  .btn {
+    box-shadow: none;
+
+    + .btn:not([class*="btn-outline"]) {
+      margin-left: 0;
+    }
+  }
+
+  &.rounded-pill {
+    .btn {
+      &:first-child {
+        border-top-left-radius: $br-pill;
+        border-bottom-left-radius: $br-pill;
+        padding-left: 1rem;
+      }
+      &:last-child {
+        border-top-right-radius: $br-pill;
+        border-bottom-right-radius: $br-pill;
+        padding-right: 1rem;
+
+        &.btn-arrow {
+          padding-right: 2rem;
+        }
+      }
+    }
+  }
+}
